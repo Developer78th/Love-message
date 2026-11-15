@@ -1,394 +1,212 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+const nextBtn = document.getElementById("nextBtn");
+
+nextBtn.addEventListener("click", function () {
+
+  const gallery = document.getElementById("gallerySection");
+  const message = document.getElementById("messageSection");
+
+  gallery.hidden = true;
+  message.hidden = false;
+
+  window.scrollTo({
+    top: 0,
+    behavior: "instant"
+  });
+
+});
+
+// Full Screen Image Gallery
+
+const galleryImages = document.querySelectorAll(".image-gallery img");
+
+const imageViewer = document.getElementById("imageViewer");
+const fullImage = document.getElementById("fullImage");
+
+const closeViewer = document.getElementById("closeViewer");
+const prevImage = document.getElementById("prevImage");
+const nextImage = document.getElementById("nextImage");
+
+let currentImage = 0;
+
+function showImage(index) {
+  currentImage =
+    (index + galleryImages.length) % galleryImages.length;
+
+  fullImage.src = galleryImages[currentImage].src;
+
+  imageViewer.classList.add("active");
 }
 
-body {
-    font-family: Georgia, serif;
-    background: linear-gradient(135deg, #fff0f3, #ffe4ec);
-    min-height: 100vh;
-    padding: 35px 15px;
-    color: #70535e;
-}
+galleryImages.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    showImage(index);
+  });
+});
 
-.container {
-  display: none;
-    max-width: 750px;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 40px 30px;
-    border-radius: 25px;
-    box-shadow: 0 10px 35px rgba(190, 100, 130, 0.12);
-}
+// Close image
+closeViewer.addEventListener("click", () => {
+  imageViewer.classList.remove("active");
+});
 
-.top {
-    text-align: center;
-    margin-bottom: 35px;
-}
+// Previous image
+prevImage.addEventListener("click", () => {
+  showImage(currentImage - 1);
+});
 
-.hearts {
-    font-size: 35px;
-    margin-bottom: 15px;
-}
+// Next image
+nextImage.addEventListener("click", () => {
+  showImage(currentImage + 1);
+});
 
-h1 {
-    color: #ad536f;
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-
-.subtitle {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #99838b;
-}
-
-.message {
-    background: #fffafa;
-    border-radius: 18px;
-    padding: 30px 25px;
-    border: 1px solid #f8e1e8;
-}
-
-.message h2 {
-    color: #ad536f;
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 25px;
-}
-
-.message p {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 2;
-    margin-bottom: 20px;
-    white-space: pre-wrap;
-}
-
-.urdu {
-    direction: rtl;
-    text-align: right;
-    font-size: 20px !important;
-}
-
-.signature {
-    text-align: right;
-    color: #b44e76;
-    font-weight: bold;
-    font-size: 19px;
-    margin-top: 35px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 35px;
-    font-family: Arial, sans-serif;
-    color: #a17f8b;
-    font-size: 14px;
-}
-
-@media (max-width: 500px) {
-    .container {
-        padding: 25px 17px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    .message {
-        padding: 22px 17px;
-    }
-}
-.primary {
-  color: white;
-  background: linear-gradient(135deg, #ff6e9d, #e83f7b);
-  box-shadow: 0 8px 20px #f26b9935;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-left: 150px;
-  text-align: center;
-  border-radius: 60px;
-}
-
-/* Image Gallery */
-
-.gallery-section {
-  text-align: center;
-  padding: 25px 15px;
-}
-
-.gallery-section h2 {
-  color: #e84375;
-  margin-bottom: 10px;
-}
-
-.gallery-section p {
-  color: #777;
-  margin-bottom: 25px;
-}
-
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  max-width: 600px;
-  margin: 0 auto 25px;
-}
-
-.image-gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.image-gallery img:hover {
-  transform: scale(1.04);
-}
-
-#messageSection[hidden] {
-  display: none !important;
-}
-
-#gallerySection[hidden] {
-  display: none !important;
-}
-
-@media (max-width: 480px) {
-  .image-gallery img {
-    height: 160px;
-  }
-}
-
-/* Page Control */
-
-#messageSection[hidden],
-#gallerySection[hidden] {
-  display: none !important;
-}
-
-#messageSection {
-  width: 100%;
-  animation: fadeIn 0.8s ease;
-}
-
-/* Gallery Design */
-
-.gallery-section {
-  text-align: center;
-  padding: 25px 15px;
-}
-
-.gallery-section h2 {
-  color: #e84375;
-  margin-bottom: 15px;
-}
-
-.gallery-section p {
-  margin-bottom: 25px;
-  color: #99838b;
-}
-
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  max-width: 600px;
-  margin: 25px auto;
-}
-
-.image-gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.image-gallery img:hover {
-  transform: scale(1.04);
-}
-
-/* Buttons */
-
-.primary {
-  display: block;
-  margin: 25px auto;
-  padding: 14px 35px;
-  border: none;
-  border-radius: 60px;
-  background: linear-gradient(135deg, #ff6e9d, #e83f7b);
-  color: white;
-  font-size: 17px;
-  cursor: pointer;
-  box-shadow: 0 8px 20px #f26b9935;
-}
-
-.primary a {
-  color: white;
-  text-decoration: none;
-}
-
-/* Page Animation */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
+// Close with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    imageViewer.classList.remove("active");
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  if (imageViewer.classList.contains("active")) {
+    if (e.key === "ArrowRight") {
+      showImage(currentImage + 1);
+    }
+
+    if (e.key === "ArrowLeft") {
+      showImage(currentImage - 1);
+    }
   }
+});
+
+// =================================
+// INTRO HEART DRAWING ANIMATION
+// =================================
+
+const canvas = document.getElementById("heartCanvas");
+const ctx = canvas.getContext("2d");
+
+const loveText = document.getElementById("loveText");
+const openMemories = document.getElementById("openMemories");
+const heartIntro = document.getElementById("heartIntro");
+
+const heartPoints = [];
+
+for (let i = 0; i <= 360; i++) {
+
+    const t = i * Math.PI / 180;
+
+    const x = 16 * Math.pow(Math.sin(t), 3);
+
+    const y =
+        13 * Math.cos(t)
+        - 5 * Math.cos(2 * t)
+        - 2 * Math.cos(3 * t)
+        - Math.cos(4 * t);
+
+    heartPoints.push({
+        x: 300 + x * 12,
+        y: 250 - y * 12
+    });
 }
 
-@media (max-width: 480px) {
-  .image-gallery img {
-    height: 160px;
-  }
-}
+let currentPoint = 0;
 
-/* Full Screen Image Viewer */
+const neonColors = [
+    "#ff00ff",
+    "#ff1493",
+    "#00ffff",
+    "#9400ff"
+];
 
-.image-gallery img {
-  cursor: pointer;
-}
+let colorIndex = 0;
 
-.image-viewer {
-  display: none;
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.96);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-}
 
-.image-viewer.active {
-  display: flex;
-}
+// Draw heart gradually
+function drawHeart() {
 
-.image-viewer img {
-  max-width: 90%;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: 10px;
-}
+    if (currentPoint >= heartPoints.length) {
 
-.close-viewer {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  background: transparent;
-  color: white;
-  border: none;
-  font-size: 45px;
-  cursor: pointer;
-  z-index: 2;
-}
+        // Heart completed
+        loveText.classList.add("show");
 
-.image-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.2);
-  color: white;
-  border: none;
-  padding: 15px;
-  font-size: 25px;
-  border-radius: 50%;
-  cursor: pointer;
-}
+        setTimeout(() => {
+            openMemories.classList.add("show");
+        }, 2000);
 
-.image-nav.prev {
-  left: 15px;
-}
-
-.image-nav.next {
-  right: 15px;
-}
-
-@media (max-width: 500px) {
-  .image-viewer img {
-    max-width: 95%;
-    max-height: 80vh;
-  }
-}
-
-/* HEART INTRO SCREEN */
-
-#heartIntro {
-    position: fixed;
-    inset: 0;
-    background: black;
-    z-index: 10000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-#heartCanvas {
-    width: min(95vw, 600px);
-    height: auto;
-    animation: heartbeat 0.8s infinite;
-    transform-origin: center;
-}
-
-#loveText {
-    color: #ff1493;
-    font-family: Arial, sans-serif;
-    font-size: 32px;
-    text-align: center;
-    opacity: 0;
-    text-shadow:
-        0 0 10px #ff1493,
-        0 0 25px #ff00ff,
-        0 0 40px #ff1493;
-}
-
-#loveText.show {
-    animation: textBlink 1s infinite;
-}
-
-#openMemories {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1s ease;
-}
-
-#openMemories.show {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
+        return;
     }
 
-    50% {
-        transform: scale(1.06);
-    }
+    const point = heartPoints[currentPoint];
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        heartPoints[Math.max(0, currentPoint - 1)].x,
+        heartPoints[Math.max(0, currentPoint - 1)].y
+    );
+
+    ctx.lineTo(point.x, point.y);
+
+    ctx.strokeStyle = "#ff1493";
+    ctx.lineWidth = 4;
+    ctx.lineCap = "round";
+
+    ctx.shadowBlur = 20;
+    ctx.shadowColor = "#ff00ff";
+
+    ctx.stroke();
+
+    currentPoint++;
+
+    requestAnimationFrame(drawHeart);
 }
 
-@keyframes textBlink {
-    0%, 100% {
-        opacity: 1;
-    }
 
-    50% {
-        opacity: 0.35;
-    }
-}
+// Start drawing
+drawHeart();
+
+
+// Blinking neon colors after completion
+setInterval(() => {
+
+    if (currentPoint < heartPoints.length) return;
+
+    colorIndex = (colorIndex + 1) % neonColors.length;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+
+    heartPoints.forEach((point, index) => {
+
+        if (index === 0) {
+            ctx.moveTo(point.x, point.y);
+        } else {
+            ctx.lineTo(point.x, point.y);
+        }
+
+    });
+
+    ctx.closePath();
+
+    ctx.strokeStyle = neonColors[colorIndex];
+    ctx.lineWidth = 5;
+    ctx.shadowBlur = 25;
+    ctx.shadowColor = neonColors[colorIndex];
+
+    ctx.stroke();
+
+}, 500);
+
+
+// Open existing website
+openMemories.addEventListener("click", () => {
+
+    heartIntro.style.display = "none";
+
+    document.querySelector(".container").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+
+});
