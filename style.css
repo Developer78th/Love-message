@@ -14,7 +14,6 @@ body {
 }
 
 .container {
-  display: none;
     max-width: 750px;
     margin: auto;
     background: rgba(255, 255, 255, 0.85);
@@ -324,72 +323,3 @@ footer {
     max-height: 80vh;
   }
 }
-
-/* HEART INTRO SCREEN */
-
-#heartIntro {
-    position: fixed;
-    inset: 0;
-    background: black;
-    z-index: 10000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-#heartCanvas {
-    width: min(95vw, 600px);
-    height: auto;
-    animation: heartbeat 0.8s infinite;
-    transform-origin: center;
-}
-
-#loveText {
-    color: #ff1493;
-    font-family: Arial, sans-serif;
-    font-size: 32px;
-    text-align: center;
-    opacity: 0;
-    text-shadow:
-        0 0 10px #ff1493,
-        0 0 25px #ff00ff,
-        0 0 40px #ff1493;
-}
-
-#loveText.show {
-    animation: textBlink 1s infinite;
-}
-
-#openMemories {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1s ease;
-}
-
-#openMemories.show {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.06);
-    }
-}
-
-@keyframes textBlink {
-    0%, 100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.35;
-    }
-}
-
