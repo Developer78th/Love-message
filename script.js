@@ -155,18 +155,18 @@ const questionTitles = {
   q7: "7. Kya meri kisi baat se takleef hui?",
   q7detail: "7. Additional detail",
   q8: "8. Future ke liye kya chahti hain?",
-  q9: "9. Aap kya kehna chahein gi?",
-  q10: "10. Aakhri paighaam",
-  q11: "11. Do you want to be my girlfriend? 💍",
-  q12: "12. Tumhare paon choom kar kahun tum se mohabbat hai to kya jawab do gi?",
-  q13: "13. Kya tum mujhe 5 minutes ka time do gi?",
-  q14: "14. Tum mujhe kab time do gi?",
-  q15: "15. Kya tum kisi aur larka se baat karna chaho gi?",
-  q16: "16. Kya main tumhare liye naya Hijaab la sakta hoon?",
-  q17: "17. Kya tum apne Bhai ko mere baare mein batana chaho gi?",
-  q18: "18. Agar tumhein kisi cheez ki zaroorat ho to kya mujhe bataogi?",
-  q19: "19. Which class do you study in?",
-q20: "20. Kuch poochna Chahti ho to Yahan likh do."
+  q9: "9. Do you want to be my girlfriend? 💍",
+  q10: "10. Tumhare paon choom kar kahun tum se mohabbat hai to kya jawab do gi?",
+  q11: "11. Kya tum mujhe 5 minutes ka time do gi?",
+  q12: "12. Tum mujhe kab time do gi?",
+  q13: "13. Kya tum kisi aur larka se baat karna chaho gi?",
+  q14: "14. Kya main tumhare liye naya Hijaab khareed sakta hoon?",
+  q15: "15. Kya tum apne Bhai ko mere baare mein batana chaho gi?",
+  q16: "16. Agar tumhein kisi cheez ki zaroorat ho to kya mujhe bataogi?",
+  q17: "17. Which class do you study in?",
+  q18: "18. Aakhri paighaam",
+  q19: "19. time bata do kab aao gi",
+  q20: "20. miss krti ho ya nahi"
 };
 
 // =================================
