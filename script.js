@@ -75,3 +75,138 @@ document.addEventListener("keydown", (e) => {
     }
   }
 });
+
+// =================================
+// THIRD PAGE NAVIGATION
+// =================================
+
+const nextToQuestions = document.getElementById("nextToQuestions");
+
+const questionsSection = document.getElementById("questionsSection");
+
+const messageSection = document.getElementById("messageSection");
+
+const backBtn = document.getElementById("backBtn");
+
+const questionsForm = document.getElementById("questionsForm");
+
+const thankYou = document.getElementById("thankYou");
+
+const answerSummary = document.getElementById("answerSummary");
+
+// Open Questions Page
+
+nextToQuestions.addEventListener("click", function () {
+
+    messageSection.hidden = true;
+    questionsSection.hidden = false;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+// Back to Message Page
+
+backBtn.addEventListener("click", function () {
+
+    questionsSection.hidden = true;
+    messageSection.hidden = false;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+// =================================
+// SUBMIT AND SHOW ANSWERS
+// =================================
+
+const questionTitles = {
+    q1: "1. Website kaisi lagi?",
+    q2: "2. Favourite memory?",
+    q3: "3. Message parh kar kaisa laga?",
+    q4: "4. Future mein baat karna chahein gi?",
+    q5: "5. Baat karne ka comfortable tareeqa?",
+    q6: "6. Achhe rishte mein zaroori cheezein?",
+    q7: "7. Kya meri kisi baat se takleef hui?",
+    q7detail: "7. Additional detail",
+    q8: "8. Future ke liye kya chahti hain?",
+    q9: "9. Aap kya kehna chahein gi?",
+    q10: "10. Aakhri paighaam",
+    q11: "Do you want to be my girlfriend? 💍",
+  q12: "Tumhare paon choom kar kahun tum se mohabbat hai to kya jawab do gi?",
+  q13: "Kya tum mujhe 5 minutes ka time do gi?",
+  q14: "Tum mujhe kab time do gi?",
+  q15: "Kya tum kisi aur larka se baat karna chaho gi?",
+  q16: "Kya main tumhare liye naya Hijaab la sakta hoon?",
+  q17: "Kya tum apne Bhai ko mere baare mein batana chaho gi?",
+  q18: "Agar tumhein kisi cheez ki zaroorat ho to kya mujhe bataogi?"
+};
+
+questionsForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const formData = new FormData(questionsForm);
+
+    const groupedAnswers = {};
+
+    // Collect all answers
+
+    for (const [name, value] of formData.entries()) {
+
+        if (value.trim() === "") continue;
+
+        if (!groupedAnswers[name]) {
+            groupedAnswers[name] = [];
+        }
+
+        groupedAnswers[name].push(value);
+
+    }
+
+    // Clear old summary
+
+    answerSummary.replaceChildren();
+
+    // Show answers safely
+
+    Object.keys(questionTitles).forEach(function (key) {
+
+        const values = groupedAnswers[key];
+
+        if (!values || values.length === 0) return;
+
+        const item = document.createElement("div");
+        item.className = "answer-item";
+
+        const heading = document.createElement("strong");
+        heading.textContent = questionTitles[key];
+
+        const answer = document.createElement("p");
+        answer.textContent = values.join(", ");
+
+        item.appendChild(heading);
+        item.appendChild(answer);
+
+        answerSummary.appendChild(item);
+
+    });
+
+    // Hide form and show thank you
+
+    questionsForm.hidden = true;
+    thankYou.hidden = false;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
