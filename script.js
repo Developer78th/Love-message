@@ -157,14 +157,16 @@ const questionTitles = {
   q8: "8. Future ke liye kya chahti hain?",
   q9: "9. Aap kya kehna chahein gi?",
   q10: "10. Aakhri paighaam",
-  q11: "Do you want to be my girlfriend? 💍",
-  q12: "Tumhare paon choom kar kahun tum se mohabbat hai to kya jawab do gi?",
-  q13: "Kya tum mujhe 5 minutes ka time do gi?",
-  q14: "Tum mujhe kab time do gi?",
-  q15: "Kya tum kisi aur larka se baat karna chaho gi?",
-  q16: "Kya main tumhare liye naya Hijaab la sakta hoon?",
-  q17: "Kya tum apne Bhai ko mere baare mein batana chaho gi?",
-  q18: "Agar tumhein kisi cheez ki zaroorat ho to kya mujhe bataogi?"
+  q11: "11. Do you want to be my girlfriend? 💍",
+  q12: "12. Tumhare paon choom kar kahun tum se mohabbat hai to kya jawab do gi?",
+  q13: "13. Kya tum mujhe 5 minutes ka time do gi?",
+  q14: "14. Tum mujhe kab time do gi?",
+  q15: "15. Kya tum kisi aur larka se baat karna chaho gi?",
+  q16: "16. Kya main tumhare liye naya Hijaab la sakta hoon?",
+  q17: "17. Kya tum apne Bhai ko mere baare mein batana chaho gi?",
+  q18: "18. Agar tumhein kisi cheez ki zaroorat ho to kya mujhe bataogi?",
+  q19: "19. Which class do you study in?",
+q20: "20. Kuch poochna Chahti ho to Yahan likh do."
 };
 
 // =================================
