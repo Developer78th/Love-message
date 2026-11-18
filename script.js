@@ -166,7 +166,10 @@ const questionTitles = {
   q17: "17. Which class do you study in?",
   q18: "18. Aakhri paighaam",
   q19: "19. time bata do kab aao gi",
-  q20: "20. miss krti ho ya nahi"
+  q20: "20. miss krti ho ya nahi",
+   q21: "21. Tum mary saath kya khana pasand kro gi?",
+  q21detail: "21. Additional detail",
+  q22: "22. Ab kabhi jhoot to nhi bolo gi?"
 };
 
 // =================================
