@@ -169,7 +169,11 @@ const questionTitles = {
   q20: "20. miss krti ho ya nahi",
    q21: "21. Tum mary saath kya khana pasand kro gi?",
   q21detail: "21. Additional detail",
-  q22: "22. Ab kabhi jhoot to nhi bolo gi?"
+  q22: "22. Ab kabhi jhoot to nhi bolo gi?",
+  q23: "23. Letters waapis kro gi?, kab?",
+  q23detail: "23. Additional detail",
+  q24: "24. Mary saath Bike pr school kab jao gi? Trust me kuch ni ho ga.🥺",
+  q24detail: "24. Additional detail"
 };
 
 // =================================
