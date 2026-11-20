@@ -173,7 +173,9 @@ const questionTitles = {
   q23: "23. Letters waapis kro gi?, kab?",
   q23detail: "23. Additional detail",
   q24: "24. Mary saath Bike pr school kab jao gi? Trust me kuch ni ho ga.🥺",
-  q24detail: "24. Additional detail"
+  q24detail: "24. Additional detail",
+    q25: "25. bracelet kab bana kr do gi? 🥺"
+
 };
 
 // =================================
