@@ -151,7 +151,7 @@ const questionTitles = {
   q3: "3. Message parh kar kaisa laga?",
   q4: "4. Future mein baat karna chahein gi?",
   q5: "5. Baat karne ka comfortable tareeqa?",
-  q6: "6. Achhe rishte mein zaroori cheezein?",
+  q6: "6. Aap ko koi tang krta ha?",
   q7: "7. Kya meri kisi baat se takleef hui?",
   q7detail: "7. Additional detail",
   q8: "8. Future ke liye kya chahti hain?",
